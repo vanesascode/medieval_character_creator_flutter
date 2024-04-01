@@ -1,3 +1,6 @@
+import 'package:character_creator/models/character.dart';
+import 'package:character_creator/screens/home/character_card.dart';
+import 'package:character_creator/shared/styled_button.dart';
 import 'package:character_creator/shared/styled_text.dart';
 import 'package:flutter/material.dart';
 
@@ -17,11 +20,21 @@ class _HomeState extends State<Home> {
         centerTitle: true,
       ),
       body: Container(
-          padding: const EdgeInsets.all(16),
-          child: Column(children: [
-            const StyledText('Character List'),
-            FilledButton(onPressed: () {}, child: const Text('Create New'))
-          ])),
+        padding: const EdgeInsets.all(16),
+        child: Column(children: [
+          Expanded(
+            child: ListView.builder(
+                itemCount: characters.length,
+                itemBuilder: (_, index) {
+                  return CharacterCard(characters[index]);
+                }),
+          ),
+          StyledButton(
+            onPressed: () {},
+            child: const StyledHeading('Create New'),
+          ),
+        ]),
+      ),
     );
   }
 }
