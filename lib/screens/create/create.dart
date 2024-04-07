@@ -1,3 +1,5 @@
+import 'package:character_creator/models/vocation.dart';
+import 'package:character_creator/screens/create/vocation_card.dart';
 import 'package:character_creator/shared/styled_button.dart';
 import 'package:character_creator/shared/styled_text.dart';
 import 'package:character_creator/theme.dart';
@@ -70,6 +72,21 @@ class _CreateState extends State<Create> {
                       prefixIcon: Icon(Icons.chat),
                       label: StyledText('Character slogan'))),
               const SizedBox(height: 30),
+              Center(
+                child: Icon(
+                  Icons.code,
+                  color: AppColors.primaryColor,
+                ),
+              ),
+              const Center(child: StyledHeading('Choose a vocation.')),
+              const Center(
+                child: StyledText('This determines your available skills'),
+              ),
+              const SizedBox(height: 30),
+              const VocationCard(vocation: Vocation.junkie),
+              const VocationCard(vocation: Vocation.ninja),
+              const VocationCard(vocation: Vocation.raider),
+              const VocationCard(vocation: Vocation.wizard),
               Center(
                   child: StyledButton(
                 onPressed: handleSubmitCharacterInfo,
