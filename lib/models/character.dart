@@ -9,6 +9,11 @@ class Character with Stats {
       required this.vocation,
       required this.id});
 
+  @override
+  String toString() {
+    return 'Name: $name, Slogan: $slogan, Vocation: $vocation, ID: $id';
+  }
+
   final Set<Skill> skills = {};
   final Vocation vocation;
   final String name;
