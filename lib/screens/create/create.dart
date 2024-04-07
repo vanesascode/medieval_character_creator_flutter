@@ -42,7 +42,8 @@ class _CreateState extends State<Create> {
         ),
         body: Container(
             padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
-            child: Column(children: [
+            child: SingleChildScrollView(
+                child: Column(children: [
               Center(
                 child: Icon(
                   Icons.code,
@@ -92,6 +93,6 @@ class _CreateState extends State<Create> {
                 onPressed: handleSubmitCharacterInfo,
                 child: const StyledHeading('Create Character'),
               ))
-            ])));
+            ]))));
   }
 }
