@@ -24,6 +24,15 @@ class _CreateState extends State<Create> {
     super.dispose();
   }
 
+  Vocation selectedVocation = Vocation.junkie;
+
+  void handleVocationChange(Vocation vocation) {
+    setState(() {
+      selectedVocation = vocation;
+    });
+    print(selectedVocation.description);
+  }
+
   void handleSubmitCharacterInfo() {
     if (_nameController.text.isEmpty || _sloganController.text.isEmpty) {
       print('Name or slogan cannot be empty');
@@ -84,10 +93,22 @@ class _CreateState extends State<Create> {
                 child: StyledText('This determines your available skills'),
               ),
               const SizedBox(height: 30),
-              const VocationCard(vocation: Vocation.junkie),
-              const VocationCard(vocation: Vocation.ninja),
-              const VocationCard(vocation: Vocation.raider),
-              const VocationCard(vocation: Vocation.wizard),
+              VocationCard(
+                  selected: selectedVocation == Vocation.junkie,
+                  onTap: handleVocationChange,
+                  vocation: Vocation.junkie),
+              VocationCard(
+                  selected: selectedVocation == Vocation.ninja,
+                  onTap: handleVocationChange,
+                  vocation: Vocation.ninja),
+              VocationCard(
+                  selected: selectedVocation == Vocation.raider,
+                  onTap: handleVocationChange,
+                  vocation: Vocation.raider),
+              VocationCard(
+                  selected: selectedVocation == Vocation.wizard,
+                  onTap: handleVocationChange,
+                  vocation: Vocation.wizard),
               Center(
                   child: StyledButton(
                 onPressed: handleSubmitCharacterInfo,
