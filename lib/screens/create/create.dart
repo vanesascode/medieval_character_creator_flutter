@@ -1,3 +1,4 @@
+import 'package:character_creator/shared/styled_button.dart';
 import 'package:character_creator/shared/styled_text.dart';
 import 'package:character_creator/theme.dart';
 import 'package:flutter/material.dart';
@@ -19,6 +20,15 @@ class _CreateState extends State<Create> {
     _nameController.dispose();
     _sloganController.dispose();
     super.dispose();
+  }
+
+  void handleSubmitCharacterInfo() {
+    if (_nameController.text.isEmpty || _sloganController.text.isEmpty) {
+      print('Name or slogan cannot be empty');
+      return;
+    }
+    print(_nameController.text);
+    print(_sloganController.text);
   }
 
   @override
@@ -58,7 +68,13 @@ class _CreateState extends State<Create> {
                   cursorColor: AppColors.textColor,
                   decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.chat),
-                      label: StyledText('Character slogan')))
+                      label: StyledText('Character slogan'))),
+              const SizedBox(height: 30),
+              Center(
+                  child: StyledButton(
+                onPressed: handleSubmitCharacterInfo,
+                child: const StyledHeading('Create Character'),
+              ))
             ])));
   }
 }
