@@ -38,12 +38,13 @@ class _CreateState extends State<Create> {
   }
 
   void handleSubmitCharacterInfo() {
-    if (_nameController.text.isEmpty || _sloganController.text.isEmpty) {
+    if (_nameController.text.trim().isEmpty ||
+        _sloganController.text.trim().isEmpty) {
       return;
     }
     characters.add(Character(
-      name: _nameController.text,
-      slogan: _sloganController.text,
+      name: _nameController.text.trim(),
+      slogan: _sloganController.text.trim(),
       vocation: selectedVocation,
       id: uuid.v4(),
     ));
