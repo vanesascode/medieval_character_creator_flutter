@@ -1,6 +1,7 @@
 import 'package:character_creator/models/character.dart';
 import 'package:character_creator/models/vocation.dart';
 import 'package:character_creator/screens/create/vocation_card.dart';
+import 'package:character_creator/screens/home/home.dart';
 import 'package:character_creator/shared/styled_button.dart';
 import 'package:character_creator/shared/styled_text.dart';
 import 'package:character_creator/theme.dart';
@@ -46,7 +47,8 @@ class _CreateState extends State<Create> {
       vocation: selectedVocation,
       id: uuid.v4(),
     ));
-    print(characters.last);
+    Navigator.push(
+        context, MaterialPageRoute(builder: ((context) => const Home())));
   }
 
   @override
