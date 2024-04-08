@@ -1,4 +1,5 @@
 import 'package:character_creator/models/character.dart';
+import 'package:character_creator/screens/create/create.dart';
 import 'package:character_creator/screens/home/character_card.dart';
 import 'package:character_creator/shared/styled_button.dart';
 import 'package:character_creator/shared/styled_text.dart';
@@ -30,7 +31,12 @@ class _HomeState extends State<Home> {
                 }),
           ),
           StyledButton(
-            onPressed: () {},
+            onPressed: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(builder: ((context) => const Create())),
+              );
+            },
             child: const StyledHeading('Create New'),
           ),
         ]),
