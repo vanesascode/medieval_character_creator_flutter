@@ -38,8 +38,47 @@ class _CreateState extends State<Create> {
   }
 
   void handleSubmitCharacterInfo() {
-    if (_nameController.text.trim().isEmpty ||
-        _sloganController.text.trim().isEmpty) {
+    if (_nameController.text.trim().isEmpty) {
+      showDialog(
+          context: context,
+          builder: (ctx) {
+            return AlertDialog(
+              title: const StyledHeading('Missing Character Name'),
+              content:
+                  const StyledText('Please enter a name for your character.'),
+              actions: [
+                StyledButton(
+                  onPressed: () {
+                    Navigator.pop(ctx);
+                  },
+                  child: const StyledHeading('OK'),
+                )
+              ],
+              actionsAlignment: MainAxisAlignment.center,
+            );
+          });
+
+      return;
+    }
+    if ((_sloganController.text.trim().isEmpty)) {
+      showDialog(
+          context: context,
+          builder: (ctx) {
+            return AlertDialog(
+              title: const StyledHeading('Missing Character Slogan'),
+              content:
+                  const StyledText('Please enter a slogan for your character.'),
+              actions: [
+                StyledButton(
+                  onPressed: () {
+                    Navigator.pop(ctx);
+                  },
+                  child: const StyledHeading('OK'),
+                )
+              ],
+              actionsAlignment: MainAxisAlignment.center,
+            );
+          });
       return;
     }
     characters.add(Character(
