@@ -19,18 +19,50 @@ class _StatsTableState extends State<StatsTable> {
         padding: const EdgeInsets.all(16),
         child: Column(children: [
           Container(
-              color: AppColors.secondaryColor,
-              padding: const EdgeInsets.all(8),
-              child: Row(children: [
-                Icon(Icons.star,
-                    color: widget.character.points > 0
-                        ? Colors.yellow
-                        : Colors.grey),
-                const SizedBox(width: 20),
-                const StyledText('Stat points available:'),
-                const Expanded(child: SizedBox(width: 20)),
-                StyledHeading(widget.character.points.toString())
-              ]))
+            color: AppColors.secondaryColor,
+            padding: const EdgeInsets.all(8),
+            child: Row(children: [
+              Icon(Icons.star,
+                  color: widget.character.points > 0
+                      ? Colors.yellow
+                      : Colors.grey),
+              const SizedBox(width: 20),
+              const StyledText('Stat points available:'),
+              const Expanded(child: SizedBox(width: 20)),
+              StyledHeading(widget.character.points.toString())
+            ]),
+          ),
+          Table(
+            children: widget.character.statsAsFormattedList.map((stat) {
+              return TableRow(children: [
+                TableCell(
+                  verticalAlignment: TableCellVerticalAlignment.middle,
+                  child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: StyledHeading(stat['title']!)),
+                ),
+                TableCell(
+                  verticalAlignment: TableCellVerticalAlignment.middle,
+                  child: Padding(
+                      padding: const EdgeInsets.all(8),
+                      child: StyledHeading(stat['value']!)),
+                ),
+                TableCell(
+                  verticalAlignment: TableCellVerticalAlignment.middle,
+                  child: IconButton(
+                      icon:
+                          Icon(Icons.arrow_upward, color: AppColors.textColor),
+                      onPressed: () {}),
+                ),
+                TableCell(
+                    verticalAlignment: TableCellVerticalAlignment.middle,
+                    child: IconButton(
+                        icon: Icon(Icons.arrow_downward,
+                            color: AppColors.textColor),
+                        onPressed: () {}))
+              ]);
+            }).toList(),
+          )
         ]));
   }
 }
