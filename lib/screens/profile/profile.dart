@@ -1,4 +1,5 @@
 import 'package:character_creator/models/character.dart';
+import 'package:character_creator/screens/profile/stats_table.dart';
 import 'package:character_creator/shared/styled_text.dart';
 import 'package:character_creator/theme.dart';
 import 'package:flutter/material.dart';
@@ -64,6 +65,11 @@ class Profile extends StatelessWidget {
                         const SizedBox(height: 10),
                       ]),
                 )),
+            Container(
+                alignment: Alignment.center,
+                child: Column(
+                  children: [StatsTable(character)],
+                ))
           ],
         ),
       ),
