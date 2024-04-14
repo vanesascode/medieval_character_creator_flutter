@@ -14,7 +14,7 @@ mixin Stats {
         "skill": _skill
       };
 
-  List<Map<String, String>> get statsAsFormatterdList => [
+  List<Map<String, String>> get statsAsFormattedList => [
         {"title": "Health", "value": _health.toString()},
         {"title": "Attack", "value": _attack.toString()},
         {"title": "Defense", "value": _defense.toString()},
