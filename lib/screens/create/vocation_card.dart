@@ -1,7 +1,7 @@
-import 'package:character_creator/models/vocation.dart';
-import 'package:character_creator/shared/styled_text.dart';
-import 'package:character_creator/theme.dart';
-import 'package:flutter/material.dart';
+import "package:character_creator/models/vocation.dart";
+import "package:character_creator/shared/styled_text.dart";
+import "package:character_creator/theme.dart";
+import "package:flutter/material.dart";
 
 class VocationCard extends StatelessWidget {
   const VocationCard(
@@ -26,7 +26,7 @@ class VocationCard extends StatelessWidget {
               padding: const EdgeInsets.all(8),
               child: Row(children: [
                 Image.asset(
-                  'assets/img/vocations/${vocation.image}',
+                  "assets/img/vocations/${vocation.image}",
                   width: 80,
                   colorBlendMode: BlendMode.color,
                   color: !selected
