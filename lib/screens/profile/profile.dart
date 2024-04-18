@@ -1,6 +1,7 @@
 import "package:character_creator/models/character.dart";
 import "package:character_creator/screens/profile/skill_list.dart";
 import "package:character_creator/screens/profile/stats_table.dart";
+import "package:character_creator/shared/styled_button.dart";
 import "package:character_creator/shared/styled_text.dart";
 import "package:character_creator/theme.dart";
 import "package:flutter/material.dart";
@@ -27,7 +28,7 @@ class Profile extends StatelessWidget {
               child: Row(
                 children: [
                   Image.asset(
-                    'assets/img/vocations/${character.vocation.image}',
+                    "assets/img/vocations/${character.vocation.image}",
                     width: 140,
                     height: 140,
                   ),
@@ -55,13 +56,13 @@ class Profile extends StatelessWidget {
                 child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    const StyledHeading('Slogan'),
+                    const StyledHeading("Slogan"),
                     StyledText(character.slogan),
                     const SizedBox(height: 10),
-                    const StyledHeading('Weapon of Choice'),
+                    const StyledHeading("Weapon of Choice"),
                     StyledText(character.vocation.weapon),
                     const SizedBox(height: 10),
-                    const StyledHeading('Unique Ability'),
+                    const StyledHeading("Unique Ability"),
                     StyledText(character.vocation.ability),
                     const SizedBox(height: 10),
                   ],
@@ -75,6 +76,16 @@ class Profile extends StatelessWidget {
                 SkillList(character),
               ]),
             ),
+            StyledButton(
+                onPressed: () {
+                  ScaffoldMessenger.of(context).showSnackBar(SnackBar(
+                      content: const StyledHeading("Character saved!"),
+                      showCloseIcon: true,
+                      duration: const Duration(seconds: 2),
+                      backgroundColor: AppColors.secondaryColor));
+                },
+                child: const StyledHeading("Save Character")),
+            const SizedBox(height: 20)
           ],
         ),
       ),
