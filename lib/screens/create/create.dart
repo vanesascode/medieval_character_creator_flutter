@@ -1,13 +1,13 @@
-import 'package:character_creator/models/character.dart';
-import 'package:character_creator/models/vocation.dart';
-import 'package:character_creator/screens/create/vocation_card.dart';
-import 'package:character_creator/screens/home/home.dart';
-import 'package:character_creator/shared/styled_button.dart';
-import 'package:character_creator/shared/styled_text.dart';
-import 'package:character_creator/theme.dart';
-import 'package:flutter/material.dart';
-import 'package:google_fonts/google_fonts.dart';
-import 'package:uuid/uuid.dart';
+import "package:character_creator/models/character.dart";
+import "package:character_creator/models/vocation.dart";
+import "package:character_creator/screens/create/vocation_card.dart";
+import "package:character_creator/screens/home/home.dart";
+import "package:character_creator/shared/styled_button.dart";
+import "package:character_creator/shared/styled_text.dart";
+import "package:character_creator/theme.dart";
+import "package:flutter/material.dart";
+import "package:google_fonts/google_fonts.dart";
+import "package:uuid/uuid.dart";
 
 var uuid = const Uuid();
 
@@ -43,15 +43,15 @@ class _CreateState extends State<Create> {
           context: context,
           builder: (ctx) {
             return AlertDialog(
-              title: const StyledHeading('Missing Character Name'),
+              title: const StyledHeading("Missing Character Name"),
               content:
-                  const StyledText('Please enter a name for your character.'),
+                  const StyledText("Please enter a name for your character."),
               actions: [
                 StyledButton(
                   onPressed: () {
                     Navigator.pop(ctx);
                   },
-                  child: const StyledHeading('OK'),
+                  child: const StyledHeading("OK"),
                 )
               ],
               actionsAlignment: MainAxisAlignment.center,
@@ -65,15 +65,15 @@ class _CreateState extends State<Create> {
           context: context,
           builder: (ctx) {
             return AlertDialog(
-              title: const StyledHeading('Missing Character Slogan'),
+              title: const StyledHeading("Missing Character Slogan"),
               content:
-                  const StyledText('Please enter a slogan for your character.'),
+                  const StyledText("Please enter a slogan for your character."),
               actions: [
                 StyledButton(
                   onPressed: () {
                     Navigator.pop(ctx);
                   },
-                  child: const StyledHeading('OK'),
+                  child: const StyledHeading("OK"),
                 )
               ],
               actionsAlignment: MainAxisAlignment.center,
@@ -95,7 +95,7 @@ class _CreateState extends State<Create> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const StyledTitle('Character Creation'),
+          title: const StyledTitle("Character Creation"),
           centerTitle: true,
         ),
         body: Container(
@@ -108,9 +108,9 @@ class _CreateState extends State<Create> {
                   color: AppColors.primaryColor,
                 ),
               ),
-              const Center(child: StyledHeading('Welcome, new player.')),
+              const Center(child: StyledHeading("Welcome, new player.")),
               const Center(
-                child: StyledText('Create a name & slogan for your character.'),
+                child: StyledText("Create a name & slogan for your character."),
               ),
               const SizedBox(height: 30),
               TextField(
@@ -120,7 +120,7 @@ class _CreateState extends State<Create> {
                   cursorColor: AppColors.textColor,
                   decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.person),
-                      label: StyledText('Character name'))),
+                      label: StyledText("Character name"))),
               const SizedBox(height: 20),
               TextField(
                   controller: _sloganController,
@@ -129,7 +129,7 @@ class _CreateState extends State<Create> {
                   cursorColor: AppColors.textColor,
                   decoration: const InputDecoration(
                       prefixIcon: Icon(Icons.chat),
-                      label: StyledText('Character slogan'))),
+                      label: StyledText("Character slogan"))),
               const SizedBox(height: 30),
               Center(
                 child: Icon(
@@ -137,9 +137,9 @@ class _CreateState extends State<Create> {
                   color: AppColors.primaryColor,
                 ),
               ),
-              const Center(child: StyledHeading('Choose a vocation.')),
+              const Center(child: StyledHeading("Choose a vocation.")),
               const Center(
-                child: StyledText('This determines your available skills'),
+                child: StyledText("This determines your available skills"),
               ),
               const SizedBox(height: 30),
               VocationCard(
@@ -164,15 +164,15 @@ class _CreateState extends State<Create> {
                   color: AppColors.primaryColor,
                 ),
               ),
-              const Center(child: StyledHeading('Good Luck.')),
+              const Center(child: StyledHeading("Good Luck.")),
               const Center(
-                child: StyledText('And enjoy the journey...'),
+                child: StyledText("And enjoy the journey..."),
               ),
               const SizedBox(height: 30),
               Center(
                   child: StyledButton(
                 onPressed: handleSubmitCharacterInfo,
-                child: const StyledHeading('Create Character'),
+                child: const StyledHeading("Create Character"),
               ))
             ]))));
   }
