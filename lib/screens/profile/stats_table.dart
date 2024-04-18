@@ -1,7 +1,7 @@
-import 'package:character_creator/models/character.dart';
-import 'package:character_creator/shared/styled_text.dart';
-import 'package:character_creator/theme.dart';
-import 'package:flutter/material.dart';
+import "package:character_creator/models/character.dart";
+import "package:character_creator/shared/styled_text.dart";
+import "package:character_creator/theme.dart";
+import "package:flutter/material.dart";
 
 class StatsTable extends StatefulWidget {
   const StatsTable(this.character, {super.key});
@@ -31,7 +31,7 @@ class _StatsTableState extends State<StatsTable> {
                         : Colors.grey,
                   ),
                   const SizedBox(width: 20),
-                  const StyledText('Stat points available:'),
+                  const StyledText("Stat points available:"),
                   const Expanded(child: SizedBox()),
                   StyledHeading(widget.character.points.toString())
                 ],
@@ -46,14 +46,14 @@ class _StatsTableState extends State<StatsTable> {
                     verticalAlignment: TableCellVerticalAlignment.middle,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: StyledHeading(stat['title']!),
+                      child: StyledHeading(stat["title"]!),
                     ),
                   ),
                   TableCell(
                     verticalAlignment: TableCellVerticalAlignment.middle,
                     child: Padding(
                       padding: const EdgeInsets.all(8.0),
-                      child: StyledHeading(stat['value']!),
+                      child: StyledHeading(stat["value"]!),
                     ),
                   ),
                   TableCell(
@@ -63,7 +63,7 @@ class _StatsTableState extends State<StatsTable> {
                           Icon(Icons.arrow_upward, color: AppColors.textColor),
                       onPressed: () {
                         setState(() {
-                          widget.character.increaseStat(stat['title']!);
+                          widget.character.increaseStat(stat["title"]!);
                         });
                       },
                     ),
@@ -75,7 +75,7 @@ class _StatsTableState extends State<StatsTable> {
                           color: AppColors.textColor),
                       onTap: () {
                         setState(() {
-                          widget.character.decreaseStat(stat['title']!);
+                          widget.character.decreaseStat(stat["title"]!);
                         });
                       },
                     ),
