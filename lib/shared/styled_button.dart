@@ -1,5 +1,5 @@
-import 'package:character_creator/theme.dart';
-import 'package:flutter/material.dart';
+import "package:character_creator/theme.dart";
+import "package:flutter/material.dart";
 
 class StyledButton extends StatelessWidget {
   const StyledButton({super.key, required this.onPressed, required this.child});
