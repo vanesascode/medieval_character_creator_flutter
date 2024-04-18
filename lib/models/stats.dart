@@ -15,10 +15,10 @@ mixin Stats {
       };
 
   List<Map<String, String>> get statsAsFormattedList => [
-        {"title": "Health", "value": _health.toString()},
-        {"title": "Attack", "value": _attack.toString()},
-        {"title": "Defense", "value": _defense.toString()},
-        {"title": "Skill", "value": _skill.toString()},
+        {"title": "health", "value": _health.toString()},
+        {"title": "attack", "value": _attack.toString()},
+        {"title": "defense", "value": _defense.toString()},
+        {"title": "skill", "value": _skill.toString()},
       ];
 
   void increaseStat(String stat) {
@@ -35,6 +35,7 @@ mixin Stats {
       if (stat == "skill") {
         _skill++;
       }
+      _points--;
     }
   }
 
