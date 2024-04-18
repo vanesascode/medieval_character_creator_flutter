@@ -1,6 +1,6 @@
-import 'package:character_creator/models/skill.dart';
-import 'package:character_creator/models/stats.dart';
-import 'package:character_creator/models/vocation.dart';
+import "package:character_creator/models/skill.dart";
+import "package:character_creator/models/stats.dart";
+import "package:character_creator/models/vocation.dart";
 
 class Character with Stats {
   Character(
@@ -11,7 +11,7 @@ class Character with Stats {
 
   @override
   String toString() {
-    return 'Name: $name, Slogan: $slogan, Vocation: $vocation, ID: $id';
+    return "Name: $name, Slogan: $slogan, Vocation: $vocation, ID: $id";
   }
 
   final Set<Skill> skills = {};
@@ -35,20 +35,20 @@ class Character with Stats {
 
 List<Character> characters = [
   Character(
-      id: '1', name: 'Klara', vocation: Vocation.wizard, slogan: 'Kapumf!'),
+      id: "1", name: "Klara", vocation: Vocation.wizard, slogan: "Kapumf!"),
   Character(
-      id: '2',
-      name: 'Jonny',
+      id: "2",
+      name: "Jonny",
       vocation: Vocation.junkie,
-      slogan: 'Light me up...'),
+      slogan: "Light me up..."),
   Character(
-      id: '3',
-      name: 'Crimson',
+      id: "3",
+      name: "Crimson",
       vocation: Vocation.raider,
-      slogan: 'Fire in the hole!'),
+      slogan: "Fire in the hole!"),
   Character(
-      id: '4',
-      name: 'Shaun',
+      id: "4",
+      name: "Shaun",
       vocation: Vocation.ninja,
-      slogan: 'Alright then gang.'),
+      slogan: "Alright then gang."),
 ];
