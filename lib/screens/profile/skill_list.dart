@@ -1,8 +1,8 @@
-import 'package:character_creator/models/character.dart';
-import 'package:character_creator/models/skill.dart';
-import 'package:character_creator/shared/styled_text.dart';
-import 'package:character_creator/theme.dart';
-import 'package:flutter/material.dart';
+import "package:character_creator/models/character.dart";
+import "package:character_creator/models/skill.dart";
+import "package:character_creator/shared/styled_text.dart";
+import "package:character_creator/theme.dart";
+import "package:flutter/material.dart";
 
 class SkillList extends StatefulWidget {
   const SkillList(this.character, {super.key});
@@ -34,8 +34,8 @@ class _SkillListState extends State<SkillList> {
           color: AppColors.secondaryColor.withOpacity(0.5),
           child: Column(
             children: [
-              const StyledHeading('Choose an active skill'),
-              const StyledText('Skills are unique to your vocation.'),
+              const StyledHeading("Choose an active skill"),
+              const StyledText("Skills are unique to your vocation."),
               const SizedBox(height: 20),
               Row(
                   mainAxisAlignment: MainAxisAlignment.center,
@@ -44,7 +44,7 @@ class _SkillListState extends State<SkillList> {
                       margin: const EdgeInsets.all(5),
                       padding: const EdgeInsets.all(2),
                       child: Image.asset(
-                        'assets/img/skills/${skill.image}',
+                        "assets/img/skills/${skill.image}",
                         width: 65,
                       ),
                     );
