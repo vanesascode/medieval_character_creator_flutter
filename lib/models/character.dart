@@ -1,6 +1,7 @@
 import "package:character_creator/models/skill.dart";
 import "package:character_creator/models/stats.dart";
 import "package:character_creator/models/vocation.dart";
+import "package:cloud_firestore/cloud_firestore.dart";
 
 class Character with Stats {
   Character(
@@ -30,6 +31,43 @@ class Character with Stats {
   void updateSkills(Skill skill) {
     skills.clear();
     skills.add(skill);
+  }
+
+  Map<String, dynamic> toFirestore() {
+    return {
+      "name": name,
+      "slogan": slogan,
+      "isFav": _isFav,
+      "vocation": vocation.toString(),
+      "skills": skills.map((skill) => skill.id).toList(),
+      "stats": statsAsMap,
+      "points": points
+    };
+  }
+
+  factory Character.fromFirestore(
+      DocumentSnapshot<Map<String, dynamic>> snapshot,
+      SnapshotOptions? options) {
+    final data = snapshot.data()!;
+
+    Character character = Character(
+      name: data["name"],
+      slogan: data["slogan"],
+      id: snapshot.id,
+      vocation: Vocation.values
+          .firstWhere((vocation) => vocation.toString() == data["vocation"]),
+    );
+
+    for (String id in data["skills"]) {
+      Skill skill = allSkills.firstWhere((element) => element.id == id);
+      character.skills.add(skill);
+    }
+
+    if (data["isFav"] != true) {
+      character.toggleIsFav();
+    }
+
+    return character;
   }
 }
 
