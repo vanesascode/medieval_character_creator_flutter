@@ -1,6 +1,6 @@
-import 'package:character_creator/models/character.dart';
-import 'package:character_creator/services/firestore_service.dart';
-import 'package:flutter/material.dart';
+import "package:character_creator/models/character.dart";
+import "package:character_creator/services/firestore_service.dart";
+import "package:flutter/material.dart";
 
 class CharacterStore extends ChangeNotifier {
   final List<Character> _characters = [];
@@ -21,5 +21,10 @@ class CharacterStore extends ChangeNotifier {
       }
       notifyListeners();
     }
+  }
+
+  Future<void> saveCharacter(Character character) async {
+    await FirestoreService.updateCharacter(character);
+    return;
   }
 }
