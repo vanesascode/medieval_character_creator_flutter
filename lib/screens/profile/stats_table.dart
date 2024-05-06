@@ -2,7 +2,6 @@ import "package:character_creator/models/character.dart";
 import "package:character_creator/shared/styled_text.dart";
 import "package:character_creator/theme.dart";
 import "package:flutter/material.dart";
-import "package:flutter/widgets.dart";
 
 class StatsTable extends StatefulWidget {
   const StatsTable(this.character, {super.key});
