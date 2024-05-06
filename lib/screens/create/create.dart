@@ -47,7 +47,7 @@ class _CreateScreenState extends State<CreateScreen> {
             return AlertDialog(
               title: const StyledHeading("Missing Character Name"),
               content:
-                  const StyledText("Please enter a name for your character."),
+                  const StyledText("Please enter a name for your warrior."),
               actions: [
                 StyledButton(
                   onPressed: () {
@@ -69,7 +69,7 @@ class _CreateScreenState extends State<CreateScreen> {
             return AlertDialog(
               title: const StyledHeading("Missing Character Slogan"),
               content:
-                  const StyledText("Please enter a slogan for your character."),
+                  const StyledText("Please enter a slogan for your warrior."),
               actions: [
                 StyledButton(
                   onPressed: () {
@@ -97,7 +97,7 @@ class _CreateScreenState extends State<CreateScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          title: const StyledTitle("Character Creation"),
+          title: const StyledTitle("Warrior Creation"),
           centerTitle: true,
         ),
         body: Container(
@@ -112,7 +112,7 @@ class _CreateScreenState extends State<CreateScreen> {
               ),
               const Center(child: StyledHeading("Welcome, new player.")),
               const Center(
-                child: StyledText("Create a name & slogan for your character."),
+                child: StyledText("Create a name & slogan for your warrrior."),
               ),
               const SizedBox(height: 30),
               TextField(
