@@ -1,21 +1,33 @@
-# character_creator
+# 🛡 Medieval warrior app with FLUTTER ⚔️
 
-A new Flutter project.
+### A fun animal medieval warrior character creator.
 
-## Getting Started
+An app that exemplifies Flutter:
 
-This project is a starting point for a Flutter application.
+- Layouts
+- Navigation between screens
+- Theming
+- Data models
+- Gathering user input
+- Global state
+- Connection with Firebase database
+- Animations
 
-A few resources to get you started if this is your first Flutter project:
+## Youtube overview:
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+[![IMAGE ALT TEXT HERE](https://img.youtube.com/vi/kJRvZfvU2Do/0.jpg)](https://www.youtube.com/watch?v=kJRvZfvU2Do)
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
+## Screenshots:
 
-## For "flutterfire" command to work:
+<div align="left">
+<img src="https://i.postimg.cc/pdZnRcQx/Screenshot-2024-05-06-at-17-42-51-removebg-preview.png" height="400">
+<img src="https://i.postimg.cc/Hxk8x03M/Screenshot-2024-05-06-at-17-43-12-removebg-preview.png" height="400">
+<img src="https://i.postimg.cc/wv4ystbG/Screenshot-2024-05-06-at-17-43-54-removebg-preview.png" height="400">
+<img src="https://i.postimg.cc/L5qqkHc6/Screenshot-2024-05-06-at-17-44-07-removebg-preview.png" height="400">
+<img src="https://i.postimg.cc/s2yhFChw/Screenshot-2024-05-06-at-17-44-54-removebg-preview.png" height="400">
+</div>
+
+### For "flutterfire" command to work:
 
 - Run vim ~/.zshrc
 - Press i
