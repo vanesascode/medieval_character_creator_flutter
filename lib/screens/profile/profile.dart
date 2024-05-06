@@ -1,4 +1,5 @@
 import "package:character_creator/models/character.dart";
+import "package:character_creator/screens/profile/heart.dart";
 import "package:character_creator/screens/profile/skill_list.dart";
 import "package:character_creator/screens/profile/stats_table.dart";
 import "package:character_creator/services/character_store.dart";
@@ -50,6 +51,7 @@ class Profile extends StatelessWidget {
                 ],
               ),
             ),
+            Heart(character: character),
             const SizedBox(height: 20),
             Center(child: Icon(Icons.code, color: AppColors.primaryColor)),
             Padding(
