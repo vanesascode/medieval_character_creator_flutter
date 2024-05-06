@@ -1,4 +1,5 @@
 import "package:character_creator/models/character.dart";
+import "package:character_creator/theme.dart";
 import "package:flutter/material.dart";
 
 class Heart extends StatefulWidget {
@@ -37,10 +38,20 @@ class _HeartState extends State<Heart> with SingleTickerProviderStateMixin {
 
   @override
   Widget build(BuildContext context) {
-    return IconButton(
-        icon: Icon(Icons.favorite, color: Colors.grey[800]),
-        onPressed: () {
-          widget.character.toggleIsFav();
+    return AnimatedBuilder(
+        animation: _controller,
+        builder: (context, child) {
+          return IconButton(
+              icon: Icon(Icons.favorite,
+                  color: widget.character.isFav
+                      ? AppColors.primaryAccent
+                      : Colors.grey[800],
+                  size: _sizeAnimation.value),
+              onPressed: () {
+                _controller.reset();
+                _controller.forward();
+                widget.character.toggleIsFav();
+              });
         });
   }
 }
