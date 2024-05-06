@@ -25,33 +25,38 @@ class Profile extends StatelessWidget {
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Container(
-              padding: const EdgeInsets.all(16),
-              color: AppColors.secondaryColor.withOpacity(0.3),
-              child: Row(
-                children: [
-                  Hero(
-                    tag: character.id.toString(),
-                    child: Image.asset(
-                      "assets/img/vocations/${character.vocation.image}",
-                      width: 140,
-                      height: 140,
-                    ),
+            Stack(
+              children: [
+                Container(
+                  padding: const EdgeInsets.all(16),
+                  color: AppColors.secondaryColor.withOpacity(0.3),
+                  child: Row(
+                    children: [
+                      Hero(
+                        tag: character.id.toString(),
+                        child: Image.asset(
+                          "assets/img/vocations/${character.vocation.image}",
+                          width: 140,
+                          height: 140,
+                        ),
+                      ),
+                      const SizedBox(width: 20),
+                      Expanded(
+                        child: Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: [
+                            StyledHeading(character.vocation.title),
+                            StyledText(character.vocation.description),
+                          ],
+                        ),
+                      )
+                    ],
                   ),
-                  const SizedBox(width: 20),
-                  Expanded(
-                    child: Column(
-                      crossAxisAlignment: CrossAxisAlignment.start,
-                      children: [
-                        StyledHeading(character.vocation.title),
-                        StyledText(character.vocation.description),
-                      ],
-                    ),
-                  )
-                ],
-              ),
+                ),
+                Positioned(
+                    top: 5, right: 5, child: Heart(character: character)),
+              ],
             ),
-            Heart(character: character),
             const SizedBox(height: 20),
             Center(child: Icon(Icons.code, color: AppColors.primaryColor)),
             Padding(
